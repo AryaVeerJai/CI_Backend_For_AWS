@@ -1,0 +1,478 @@
+{
+  "taxonomyVersion": "2026.05.30",
+  "description": "Canonical MSME carbon transaction categories, subcategories, and cross-source mappings (backend, SMS, OCR, agents).",
+  "transactionCategories": [
+    "raw_materials",
+    "energy",
+    "transportation",
+    "waste_management",
+    "water",
+    "equipment",
+    "maintenance",
+    "services",
+    "utilities",
+    "telecom",
+    "other"
+  ],
+  "documentCategories": [
+    "raw_materials",
+    "energy",
+    "transportation",
+    "waste_management",
+    "water",
+    "equipment",
+    "maintenance",
+    "services",
+    "utilities",
+    "telecom",
+    "general",
+    "other"
+  ],
+  "assessmentBreakdownKeys": [
+    "energy",
+    "water",
+    "waste",
+    "transportation",
+    "materials",
+    "manufacturing"
+  ],
+  "subcategories": {
+    "energy": [
+      "grid",
+      "renewable",
+      "mixed",
+      "electricity",
+      "diesel",
+      "petrol",
+      "lpg",
+      "cng",
+      "coal",
+      "natural_gas",
+      "fuel",
+      "gas",
+      "solar",
+      "hvac",
+      "machinery",
+      "ev_charging",
+      "meter_reading",
+      "lighting",
+      "heating",
+      "general"
+    ],
+    "water": [
+      "consumption",
+      "supply",
+      "sewage",
+      "treatment",
+      "irrigation",
+      "general"
+    ],
+    "transportation": [
+      "diesel",
+      "petrol",
+      "cng",
+      "fuel",
+      "vehicle",
+      "freight_logistics",
+      "air_travel",
+      "rail",
+      "public_transport",
+      "logistics",
+      "courier",
+      "fleet",
+      "ev",
+      "cab",
+      "maintenance",
+      "general"
+    ],
+    "waste_management": [
+      "solid",
+      "hazardous",
+      "recycling",
+      "disposal",
+      "scrap",
+      "e_waste",
+      "general"
+    ],
+    "raw_materials": [
+      "steel",
+      "aluminum",
+      "plastic",
+      "paper",
+      "glass",
+      "wood",
+      "concrete",
+      "cement",
+      "chemical",
+      "textile",
+      "packaging",
+      "metals",
+      "rubber",
+      "electronics",
+      "machinery",
+      "general"
+    ],
+    "equipment": [
+      "machinery_capex",
+      "it_equipment",
+      "machinery",
+      "general"
+    ],
+    "maintenance": [
+      "amc_service",
+      "repair",
+      "building",
+      "facility",
+      "general"
+    ],
+    "services": [
+      "consulting",
+      "design",
+      "professional_fees",
+      "maintenance",
+      "general"
+    ],
+    "utilities": [
+      "electricity_grid",
+      "water_supply",
+      "gas",
+      "sewage",
+      "hvac",
+      "general"
+    ],
+    "telecom": [
+      "mobile",
+      "recharge",
+      "broadband",
+      "internet",
+      "dth",
+      "telecom",
+      "data",
+      "sim",
+      "voip",
+      "general"
+    ],
+    "other": [
+      "general",
+      "misc",
+      "finance",
+      "insurance",
+      "subscription",
+      "transfer",
+      "food",
+      "operational"
+    ]
+  },
+  "subcategoryAliases": {
+    "diesel.mobile": "diesel",
+    "diesel.stationary": "diesel",
+    "petrol.mobile": "petrol",
+    "liquid_fuel.mobile": "fuel",
+    "liquid_fuel.stationary": "fuel",
+    "natural_gas.stationary": "natural_gas",
+    "cng.mobile": "cng",
+    "lpg.mobile": "lpg",
+    "electricity.general": "electricity",
+    "solar_net_metering": "renewable",
+    "car.general": "vehicle",
+    "car.logistics": "logistics",
+    "car.business_travel": "air_travel",
+    "car.commute": "public_transport",
+    "courier_logistics": "courier",
+    "raw_materials": "general",
+    "telecom_internet": "internet",
+    "fuel_diesel": "diesel",
+    "fuel_petrol": "petrol",
+    "recycling_disposal": "recycling",
+    "metals": "metals",
+    "textiles_inputs": "textile",
+    "chemical_inputs": "chemical"
+  },
+  "energyRenewableSubcategories": [
+    "renewable",
+    "solar"
+  ],
+  "energyElectricitySubcategories": [
+    "grid",
+    "renewable",
+    "mixed",
+    "electricity",
+    "solar",
+    "ev_charging",
+    "meter_reading",
+    "lighting",
+    "hvac",
+    "machinery"
+  ],
+  "energyFuelSubcategories": [
+    "diesel",
+    "petrol",
+    "lpg",
+    "cng",
+    "coal",
+    "natural_gas",
+    "fuel",
+    "gas",
+    "heating"
+  ],
+  "telecomKeywords": [
+    "recharge",
+    "prepaid",
+    "postpaid",
+    "airtel",
+    "jio",
+    "vodafone",
+    "vi ",
+    "bsnl",
+    "mobile",
+    "validity",
+    "talktime",
+    "data pack",
+    "broadband",
+    "dth",
+    "tata sky",
+    "dish tv",
+    "sim "
+  ],
+  "categoryKeywords": {
+    "energy": [
+      "electricity",
+      "power",
+      "energy",
+      "kwh",
+      "solar",
+      "wind",
+      "renewable",
+      "dg set",
+      "generator",
+      "genset"
+    ],
+    "water": [
+      "water",
+      "sewage",
+      "drainage",
+      "irrigation",
+      "treatment",
+      "supply",
+      "jal board"
+    ],
+    "waste_management": [
+      "waste",
+      "garbage",
+      "recycling",
+      "disposal",
+      "landfill",
+      "compost",
+      "scrap"
+    ],
+    "transportation": [
+      "transport",
+      "shipping",
+      "delivery",
+      "logistics",
+      "freight",
+      "vehicle",
+      "truck",
+      "fuel",
+      "diesel",
+      "petrol",
+      "cab",
+      "uber",
+      "ola"
+    ],
+    "raw_materials": [
+      "material",
+      "steel",
+      "aluminum",
+      "plastic",
+      "wood",
+      "concrete",
+      "fabric",
+      "chemical",
+      "procurement",
+      "raw material"
+    ],
+    "equipment": [
+      "equipment",
+      "machine",
+      "tool",
+      "device",
+      "apparatus",
+      "instrument",
+      "capex"
+    ],
+    "maintenance": [
+      "maintenance",
+      "repair",
+      "overhaul",
+      "upgrade",
+      "fix",
+      "amc"
+    ],
+    "services": [
+      "consulting",
+      "consultancy",
+      "professional services",
+      "service charge",
+      "service fee",
+      "professional fee",
+      "consulting fee",
+      "legal fee",
+      "audit fee",
+      "design",
+      "graphic design",
+      "interior design",
+      "service",
+      "services",
+      "plumbing",
+      "electrical services"
+    ],
+    "utilities": [
+      "utility",
+      "gas bill",
+      "png",
+      "piped gas",
+      "municipal"
+    ],
+    "telecom": [
+      "internet",
+      "phone",
+      "telecom",
+      "broadband",
+      "mobile recharge",
+      "prepaid",
+      "postpaid",
+      "dth",
+      "sim"
+    ],
+    "other": [
+      "miscellaneous",
+      "other",
+      "general",
+      "admin",
+      "office supplies",
+      "insurance",
+      "loan",
+      "emi",
+      "transfer"
+    ]
+  },
+  "mappings": {
+    "smsExpenseCategory": {
+      "energy": "energy",
+      "transport": "transportation",
+      "transportation": "transportation",
+      "bills": "utilities",
+      "shopping": "raw_materials",
+      "food": "other",
+      "finance": "other",
+      "healthcare": "other",
+      "entertainment": "other",
+      "education": "other",
+      "transfer": "other",
+      "other": "other"
+    },
+    "smsExpenseSubcategory": {
+      "electricity": { "category": "energy", "subcategory": "grid" },
+      "gas": { "category": "energy", "subcategory": "natural_gas" },
+      "water": { "category": "water", "subcategory": "consumption" },
+      "fuel": { "category": "transportation", "subcategory": "fuel" },
+      "cab": { "category": "transportation", "subcategory": "cab" },
+      "flight": { "category": "transportation", "subcategory": "air_travel" },
+      "train": { "category": "transportation", "subcategory": "rail" },
+      "public": { "category": "transportation", "subcategory": "public_transport" },
+      "toll": { "category": "transportation", "subcategory": "vehicle" },
+      "delivery": { "category": "transportation", "subcategory": "logistics" },
+      "mobile": { "category": "telecom", "subcategory": "mobile" },
+      "recharge": { "category": "telecom", "subcategory": "recharge" },
+      "telecom": { "category": "telecom", "subcategory": "telecom" },
+      "broadband": { "category": "telecom", "subcategory": "broadband" },
+      "internet": { "category": "telecom", "subcategory": "internet" },
+      "dth": { "category": "telecom", "subcategory": "dth" },
+      "insurance": { "category": "other", "subcategory": "insurance" },
+      "premium": { "category": "other", "subcategory": "insurance" },
+      "loan": { "category": "other", "subcategory": "finance" },
+      "emi": { "category": "other", "subcategory": "finance" },
+      "subscription": { "category": "other", "subcategory": "subscription" },
+      "investment": { "category": "other", "subcategory": "finance" }
+    },
+    "smsBillsEnergySubcategories": ["electricity", "power", "energy"],
+    "pipelineCategory": {
+      "fuel": "energy",
+      "energy": "energy",
+      "transport": "transportation",
+      "waste": "waste_management",
+      "procurement": "raw_materials",
+      "food": "other",
+      "services": "services",
+      "other": "other"
+    },
+    "legacyCategoryAliases": {
+      "telecom": "telecom",
+      "fuel": "energy",
+      "transport": "transportation",
+      "procurement": "raw_materials",
+      "waste": "waste_management",
+      "materials": "raw_materials",
+      "services": "services",
+      "general": "other"
+    }
+  },
+  "invoiceSubcategoryOverrides": {
+    "water_bill": { "category": "water", "subcategory": "supply" },
+    "sewage_charges": { "category": "water", "subcategory": "sewage" },
+    "mobile_recharge": { "category": "telecom", "subcategory": "mobile" },
+    "internet_services": { "category": "telecom", "subcategory": "internet" },
+    "broadband": { "category": "telecom", "subcategory": "broadband" },
+    "telecom": { "category": "telecom", "subcategory": "telecom" },
+    "sim_services": { "category": "telecom", "subcategory": "sim" },
+    "mobile_bills": { "category": "telecom", "subcategory": "mobile" },
+    "data_services": { "category": "telecom", "subcategory": "data" },
+    "enterprise_telecom": { "category": "telecom", "subcategory": "telecom" },
+    "voip_systems": { "category": "telecom", "subcategory": "voip" },
+    "waste_management_utility": { "category": "waste_management", "subcategory": "solid" }
+  },
+  "invoiceCategoryBackendOverrides": {
+    "telecommunication": "telecom"
+  },
+  "subcategoryKeywordMap": {
+    "energy": {
+      "grid": ["grid", "electricity", "power", "kwh", "discom"],
+      "renewable": ["solar", "wind", "renewable", "green"],
+      "fuel": ["diesel", "petrol", "gas", "fuel", "lpg", "cng"],
+      "coal": ["coal"]
+    },
+    "water": {
+      "consumption": ["water bill", "water supply", "consumption"],
+      "sewage": ["sewage", "drainage", "stp"],
+      "supply": ["jal board", "municipal water"]
+    },
+    "waste_management": {
+      "recycling": ["recycling", "recycle"],
+      "hazardous": ["hazardous", "toxic", "chemical waste"],
+      "solid": ["solid", "garbage", "waste", "landfill"]
+    },
+    "transportation": {
+      "diesel": ["diesel", "hsd"],
+      "petrol": ["petrol", "gasoline"],
+      "cng": ["cng", "compressed natural gas"]
+    },
+    "telecom": {
+      "mobile": ["mobile", "prepaid", "postpaid", "recharge"],
+      "broadband": ["broadband", "fiber", "ftth"],
+      "internet": ["internet", "leased line"],
+      "dth": ["dth", "tata sky", "dish tv"]
+    },
+    "raw_materials": {
+      "steel": ["steel", "tmt", "iron"],
+      "general": ["material", "raw material", "inputs"]
+    },
+    "services": {
+      "consulting": ["consulting", "consultancy", "advisory", "management consultant"],
+      "design": ["design", "graphic design", "interior design", "web design"],
+      "professional_fees": ["fee", "service fee", "professional fee", "consulting fee", "legal fee", "audit fee"],
+      "maintenance": ["maintenance", "repair", "amc", "plumbing", "electrical services"],
+      "general": ["service", "services", "service charge"]
+    }
+  }
+}

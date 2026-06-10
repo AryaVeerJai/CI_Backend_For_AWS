@@ -1,0 +1,516 @@
+{
+  "taxonomyVersion": "2026.05.31",
+  "description": "Enterprise MSME invoice category + subcategory intelligence taxonomy with emission mapping",
+  "categories": [
+    {
+      "id": "utilities",
+      "label": "Utilities",
+      "backend_category": "utilities",
+      "keywords": ["electricity", "power bill", "water bill", "gas bill", "broadband", "internet", "telecom", "mobile recharge", "sewage", "waste management", "solar", "generator", "cooling", "heating", "utility"],
+      "vendor_patterns": ["bescom", "mseb", "tata power", "adani electricity", "jio", "airtel", "bsnl", "vodafone", "idea", "indane gas", "hp gas", "karnataka electricity board", "water board"],
+      "subcategories": [
+        { "id": "electricity_bill", "label": "Electricity Bill", "keywords": ["electricity", "power bill", "kwh", "energy charges", "eb bill", "discom", "monthly electricity bill", "electricity charges", "karnataka electricity board"], "sector": "Scope 2 electricity", "emission_scope": "Scope 2", "carbon_factor": 0.82, "backend_subcategory": "grid" },
+        { "id": "water_bill", "label": "Water Bill", "keywords": ["water bill", "water supply", "jal board", "municipal water", "factory water bill", "water charges", "water board"], "sector": "Utility consumption", "emission_scope": "Scope 3", "carbon_factor": 0.0004, "backend_subcategory": "supply" },
+        { "id": "gas_bill", "label": "Gas Bill", "keywords": ["gas bill", "png", "piped gas", "cng supply"], "sector": "Fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 1.51, "backend_subcategory": "gas" },
+        { "id": "solar_energy", "label": "Solar Energy", "keywords": ["solar", "rooftop solar", "solar panel", "renewable energy"], "sector": "Renewable offsets", "emission_scope": "Scope 2", "carbon_factor": 0.1, "backend_subcategory": "renewable" },
+        { "id": "diesel_generator", "label": "Diesel Generator", "keywords": ["diesel generator", "dg set", "genset", "backup power", "diesel for dg set", "fuel expense"], "sector": "Fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.68, "backend_subcategory": "diesel" },
+        { "id": "internet_services", "label": "Internet Services", "keywords": ["internet", "broadband", "fiber", "leased line"], "sector": "Utility consumption", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "internet" },
+        { "id": "broadband", "label": "Broadband", "keywords": ["broadband", "ftth", "wifi"], "sector": "Utility consumption", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "broadband" },
+        { "id": "telecom", "label": "Telecom", "keywords": ["telecom", "landline", "pstn"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "telecom" },
+        { "id": "mobile_recharge", "label": "Mobile Recharge", "keywords": ["mobile recharge", "prepaid", "postpaid mobile"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "mobile" },
+        { "id": "sewage_charges", "label": "Sewage Charges", "keywords": ["sewage", "drainage", "stp"], "sector": "Utility consumption", "emission_scope": "Scope 3", "carbon_factor": 0.0005, "backend_subcategory": "sewage" },
+        { "id": "waste_management_utility", "label": "Waste Management", "keywords": ["municipal waste", "garbage collection"], "sector": "Waste processing emissions", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "solid" },
+        { "id": "renewable_energy", "label": "Renewable Energy", "keywords": ["wind energy", "green power", "renewable purchase"], "sector": "Renewable offsets", "emission_scope": "Scope 2", "carbon_factor": 0.1, "backend_subcategory": "renewable" },
+        { "id": "cooling_systems", "label": "Cooling Systems", "keywords": ["hvac", "air conditioning", "chiller", "cooling tower"], "sector": "Utility consumption", "emission_scope": "Scope 2", "carbon_factor": 0.75, "backend_subcategory": "hvac" },
+        { "id": "heating_systems", "label": "Heating Systems", "keywords": ["boiler", "heating", "furnace heating"], "sector": "Fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.1, "backend_subcategory": "heating" }
+      ]
+    },
+    {
+      "id": "transport_logistics",
+      "label": "Transport & Logistics",
+      "backend_category": "transportation",
+      "keywords": ["transport", "logistics", "freight", "courier", "delivery", "fuel", "diesel", "petrol", "fleet", "shipping", "truck", "vehicle"],
+      "vendor_patterns": ["indian oil", "bharat petroleum", "hp petrol", "reliance petrol", "dtdc", "bluedart", "delhivery", "fedex", "uber", "ola", "rapido"],
+      "subcategories": [
+        { "id": "diesel_fuel", "label": "Diesel Fuel", "keywords": ["diesel", "hsd", "high speed diesel"], "sector": "Fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.68, "backend_subcategory": "diesel" },
+        { "id": "petrol_fuel", "label": "Petrol Fuel", "keywords": ["petrol", "ms petrol", "gasoline"], "sector": "Fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.31, "backend_subcategory": "petrol" },
+        { "id": "ev_charging", "label": "EV Charging", "keywords": ["ev charging", "electric vehicle charge", "charging station"], "sector": "Scope 2 electricity", "emission_scope": "Scope 2", "carbon_factor": 0.45, "backend_subcategory": "ev" },
+        { "id": "fleet_operations", "label": "Fleet Operations", "keywords": ["fleet", "fleet management", "vehicle lease"], "sector": "Logistics operations", "emission_scope": "Scope 1", "carbon_factor": 1.8, "backend_subcategory": "fleet" },
+        { "id": "truck_logistics", "label": "Truck Logistics", "keywords": ["truck", "lorry", "goods carrier", "ftl", "ltl"], "sector": "Freight emissions", "emission_scope": "Scope 3", "carbon_factor": 1.6, "backend_subcategory": "freight_logistics" },
+        { "id": "shipping", "label": "Shipping", "keywords": ["shipping", "cargo", "vessel", "port freight"], "sector": "Freight emissions", "emission_scope": "Scope 3", "carbon_factor": 1.4, "backend_subcategory": "shipping" },
+        { "id": "courier_services", "label": "Courier Services", "keywords": ["courier", "parcel", "express delivery"], "sector": "Freight emissions", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "courier" },
+        { "id": "last_mile_delivery", "label": "Last Mile Delivery", "keywords": ["last mile", "hyperlocal delivery", "bike delivery"], "sector": "Logistics operations", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "last_mile" },
+        { "id": "cold_chain_transport", "label": "Cold Chain Transport", "keywords": ["cold chain", "reefer", "frozen transport"], "sector": "Freight emissions", "emission_scope": "Scope 3", "carbon_factor": 2.0, "backend_subcategory": "cold_chain" },
+        { "id": "public_transport", "label": "Public Transport", "keywords": ["bus ticket", "metro", "rail ticket", "public transport"], "sector": "Logistics operations", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "public" },
+        { "id": "cab_services", "label": "Cab Services", "keywords": ["cab", "taxi", "ola", "uber", "rapido"], "sector": "Logistics operations", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "cab" },
+        { "id": "vehicle_maintenance", "label": "Vehicle Maintenance", "keywords": ["vehicle service", "garage", "auto repair"], "sector": "Vehicle lifecycle", "emission_scope": "Scope 3", "carbon_factor": 0.6, "backend_subcategory": "maintenance" },
+        { "id": "spare_parts_transport", "label": "Spare Parts", "keywords": ["auto spare", "vehicle parts"], "sector": "Vehicle lifecycle", "emission_scope": "Scope 3", "carbon_factor": 1.1, "backend_subcategory": "spare_parts" },
+        { "id": "tire_replacement", "label": "Tire Replacement", "keywords": ["tyre", "tire", "mrf", "apollo tyres"], "sector": "Vehicle lifecycle", "emission_scope": "Scope 3", "carbon_factor": 1.3, "backend_subcategory": "tyres" },
+        { "id": "warehouse_transport", "label": "Warehouse Transport", "keywords": ["warehouse transfer", "inbound logistics", "3pl"], "sector": "Logistics operations", "emission_scope": "Scope 3", "carbon_factor": 1.2, "backend_subcategory": "warehouse" }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "label": "Manufacturing",
+      "backend_category": "raw_materials",
+      "keywords": ["manufacturing", "steel", "cement", "chemical", "plastic", "textile", "machinery", "fabrication", "welding", "industrial"],
+      "vendor_patterns": ["tata steel", "jsw steel", "ultratech", "ambuja cement", "reliance industries"],
+      "subcategories": [
+        { "id": "steel", "label": "Steel", "keywords": ["steel", "tmt", "ms angle", "hr coil", "ingot", "steel coils", "raw material purchase"], "sector": "High carbon manufacturing", "emission_scope": "Scope 3", "carbon_factor": 1.85, "backend_subcategory": "steel" },
+        { "id": "cement", "label": "Cement", "keywords": ["cement", "opc", "ppc", "clinker", "rmc"], "sector": "High carbon manufacturing", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "cement" },
+        { "id": "chemicals", "label": "Chemicals", "keywords": ["chemical", "solvent", "acid", "alkali", "industrial chemical", "production chemicals", "consumables purchase"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 1.4, "backend_subcategory": "chemical" },
+        { "id": "plastic", "label": "Plastic", "keywords": ["plastic", "polymer", "pvc", "hdpe", "granule", "resin"], "sector": "Raw material emissions", "emission_scope": "Scope 3", "carbon_factor": 2.53, "backend_subcategory": "plastic" },
+        { "id": "textile_manufacturing", "label": "Textile Manufacturing", "keywords": ["textile mill", "weaving", "knitting factory"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 0.95, "backend_subcategory": "textile" },
+        { "id": "packaging_manufacturing", "label": "Packaging", "keywords": ["packaging material", "corrugated", "lamination film"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.85, "backend_subcategory": "packaging" },
+        { "id": "rubber", "label": "Rubber", "keywords": ["rubber", "latex", "tyre compound"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 1.2, "backend_subcategory": "rubber" },
+        { "id": "electronics_components", "label": "Electronics Components", "keywords": ["pcb", "semiconductor", "electronic component"], "sector": "Industrial energy usage", "emission_scope": "Scope 3", "carbon_factor": 1.1, "backend_subcategory": "electronics" },
+        { "id": "industrial_machinery", "label": "Industrial Machinery", "keywords": ["cnc", "lathe", "industrial machine", "press machine"], "sector": "Industrial energy usage", "emission_scope": "Scope 3", "carbon_factor": 1.3, "backend_subcategory": "machinery" },
+        { "id": "printing_materials", "label": "Printing Materials", "keywords": ["ink", "toner", "printing plate", "offset ink"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "printing" },
+        { "id": "fabrication", "label": "Fabrication", "keywords": ["fabrication", "sheet metal", "job work"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 1.0, "backend_subcategory": "fabrication" },
+        { "id": "welding", "label": "Welding", "keywords": ["welding", "electrode", "argon welding"], "sector": "Industrial processing", "emission_scope": "Scope 1", "carbon_factor": 1.15, "backend_subcategory": "welding" },
+        { "id": "paint_industry", "label": "Paint Industry", "keywords": ["paint", "coating", "primer", "enamel"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 1.25, "backend_subcategory": "paint" },
+        { "id": "construction_material", "label": "Construction Material", "keywords": ["aggregate", "sand", "brick", "block"], "sector": "Material lifecycle", "emission_scope": "Scope 3", "carbon_factor": 0.45, "backend_subcategory": "construction_material" },
+        { "id": "heavy_equipment", "label": "Heavy Equipment", "keywords": ["excavator", "crane", "heavy equipment"], "sector": "Industrial energy usage", "emission_scope": "Scope 3", "carbon_factor": 1.5, "backend_subcategory": "heavy_equipment" }
+      ]
+    },
+    {
+      "id": "office_operations",
+      "label": "Office Operations",
+      "backend_category": "equipment",
+      "keywords": ["office", "stationery", "software", "saas", "laptop", "printer", "rent", "cleaning", "pantry", "security"],
+      "vendor_patterns": ["amazon business", "flipkart wholesale", "staples", "microsoft", "google workspace", "zoho"],
+      "subcategories": [
+        { "id": "stationery", "label": "Stationery", "keywords": ["stationery", "pen", "paper", "notebook"], "sector": "Purchased goods", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "stationery" },
+        { "id": "printing", "label": "Printing", "keywords": ["printing service", "xerox", "photocopy"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "printing" },
+        { "id": "office_furniture", "label": "Office Furniture", "keywords": ["desk", "chair", "cabinet", "furniture"], "sector": "Purchased goods", "emission_scope": "Scope 3", "carbon_factor": 0.65, "backend_subcategory": "furniture" },
+        { "id": "it_equipment", "label": "IT Equipment", "keywords": ["computer", "monitor", "server", "network switch"], "sector": "IT infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "it_equipment" },
+        { "id": "laptop_desktop", "label": "Laptop/Desktop", "keywords": ["laptop", "desktop", "macbook", "dell", "hp laptop"], "sector": "IT infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.95, "backend_subcategory": "laptop" },
+        { "id": "printer_supplies", "label": "Printer Supplies", "keywords": ["cartridge", "toner", "printer ink"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "printer" },
+        { "id": "software_subscription", "label": "Software Subscription", "keywords": ["software license", "subscription", "license fee"], "sector": "Digital energy footprint", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "software" },
+        { "id": "saas_tools", "label": "SaaS Tools", "keywords": ["saas", "crm", "erp cloud"], "sector": "Cloud infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "saas" },
+        { "id": "cloud_services", "label": "Cloud Services", "keywords": ["aws", "azure", "gcp", "cloud hosting"], "sector": "Cloud infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "cloud" },
+        { "id": "office_rent", "label": "Office Rent", "keywords": ["office rent", "lease rent", "coworking"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.15, "backend_subcategory": "rent" },
+        { "id": "cleaning_services", "label": "Cleaning Services", "keywords": ["housekeeping", "cleaning", "janitorial"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "cleaning" },
+        { "id": "pantry_supplies", "label": "Pantry Supplies", "keywords": ["pantry", "tea", "coffee", "snacks office"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "pantry" },
+        { "id": "security_services", "label": "Security Services", "keywords": ["security guard", "security agency"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.18, "backend_subcategory": "security" },
+        { "id": "cctv_systems", "label": "CCTV Systems", "keywords": ["cctv", "surveillance camera"], "sector": "IT infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "cctv" },
+        { "id": "air_conditioning", "label": "Air Conditioning", "keywords": ["ac service", "air conditioner", "split ac"], "sector": "Office electricity", "emission_scope": "Scope 2", "carbon_factor": 0.75, "backend_subcategory": "ac" }
+      ]
+    },
+    {
+      "id": "food_hospitality",
+      "label": "Food & Hospitality",
+      "backend_category": "other",
+      "keywords": ["restaurant", "hotel", "catering", "food delivery", "beverage", "dairy", "bakery", "meat", "seafood"],
+      "vendor_patterns": ["swiggy", "zomato", "dominos", "mcdonald", "taj hotels", "oyo", "haldiram"],
+      "subcategories": [
+        { "id": "restaurant_bills", "label": "Restaurant Bills", "keywords": ["restaurant", "dining", "food bill"], "sector": "Hospitality operations", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "restaurant" },
+        { "id": "catering", "label": "Catering", "keywords": ["catering", "banquet", "event food"], "sector": "Food supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.6, "backend_subcategory": "catering" },
+        { "id": "hotel_stay", "label": "Hotel Stay", "keywords": ["hotel", "lodging", "room rent"], "sector": "Hospitality operations", "emission_scope": "Scope 3", "carbon_factor": 0.45, "backend_subcategory": "hotel" },
+        { "id": "food_delivery", "label": "Food Delivery", "keywords": ["food delivery", "swiggy", "zomato"], "sector": "Food supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "delivery" },
+        { "id": "beverages", "label": "Beverages", "keywords": ["beverage", "soft drink", "juice"], "sector": "Food supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "beverage" },
+        { "id": "dairy_products", "label": "Dairy Products", "keywords": ["milk", "dairy", "curd", "cheese"], "sector": "Agriculture emissions", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "dairy" },
+        { "id": "frozen_food", "label": "Frozen Food", "keywords": ["frozen", "ice cream", "cold storage food"], "sector": "Food supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.65, "backend_subcategory": "frozen" },
+        { "id": "event_catering", "label": "Event Catering", "keywords": ["wedding catering", "corporate catering"], "sector": "Hospitality operations", "emission_scope": "Scope 3", "carbon_factor": 0.58, "backend_subcategory": "event_catering" },
+        { "id": "bakery_supplies", "label": "Bakery Supplies", "keywords": ["bakery", "bread", "flour supply"], "sector": "Food supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.42, "backend_subcategory": "bakery" },
+        { "id": "agriculture_products", "label": "Agriculture Products", "keywords": ["vegetable", "fruit", "grain", "produce"], "sector": "Agriculture emissions", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "produce" },
+        { "id": "meat_poultry", "label": "Meat & Poultry", "keywords": ["meat", "chicken", "poultry"], "sector": "Agriculture emissions", "emission_scope": "Scope 3", "carbon_factor": 1.1, "backend_subcategory": "meat" },
+        { "id": "seafood", "label": "Seafood", "keywords": ["fish", "seafood", "prawn"], "sector": "Food supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.8, "backend_subcategory": "seafood" },
+        { "id": "organic_products", "label": "Organic Products", "keywords": ["organic", "natural food"], "sector": "Agriculture emissions", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "organic" }
+      ]
+    },
+    {
+      "id": "healthcare_medical",
+      "label": "Healthcare & Medical",
+      "backend_category": "equipment",
+      "keywords": ["medical", "hospital", "pharmacy", "diagnostic", "surgical", "healthcare", "lab test"],
+      "vendor_patterns": ["apollo pharmacy", "medplus", "dr lal pathlabs", "thyrocare"],
+      "subcategories": [
+        { "id": "medical_equipment", "label": "Medical Equipment", "keywords": ["medical equipment", "hospital equipment"], "sector": "Healthcare equipment", "emission_scope": "Scope 3", "carbon_factor": 1.0, "backend_subcategory": "medical_equipment" },
+        { "id": "diagnostic_services", "label": "Diagnostic Services", "keywords": ["diagnostic", "pathology", "lab test"], "sector": "Medical operations", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "diagnostic" },
+        { "id": "pharmacy", "label": "Pharmacy", "keywords": ["pharmacy", "medicine", "drug store"], "sector": "Medical operations", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "pharmacy" },
+        { "id": "hospital_bills", "label": "Hospital Bills", "keywords": ["hospital bill", "ipd", "opd"], "sector": "Medical operations", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "hospital" },
+        { "id": "laboratory_services", "label": "Laboratory Services", "keywords": ["laboratory", "lab services"], "sector": "Medical operations", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "laboratory" },
+        { "id": "surgical_equipment", "label": "Surgical Equipment", "keywords": ["surgical", "scalpel", "suture"], "sector": "Healthcare equipment", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "surgical" },
+        { "id": "healthcare_consumables", "label": "Healthcare Consumables", "keywords": ["syringe", "gloves medical", "ppe medical"], "sector": "Medical operations", "emission_scope": "Scope 3", "carbon_factor": 0.6, "backend_subcategory": "consumables" },
+        { "id": "oxygen_supply", "label": "Oxygen Supply", "keywords": ["oxygen", "medical gas"], "sector": "Medical operations", "emission_scope": "Scope 1", "carbon_factor": 0.8, "backend_subcategory": "oxygen" },
+        { "id": "ambulance_services", "label": "Ambulance Services", "keywords": ["ambulance", "emergency transport"], "sector": "Medical operations", "emission_scope": "Scope 3", "carbon_factor": 1.2, "backend_subcategory": "ambulance" },
+        { "id": "medical_waste", "label": "Medical Waste", "keywords": ["biomedical waste", "medical waste disposal"], "sector": "Biomedical waste", "emission_scope": "Scope 3", "carbon_factor": 2.0, "backend_subcategory": "hazardous" }
+      ]
+    },
+    {
+      "id": "retail_fmcg",
+      "label": "Retail & FMCG",
+      "backend_category": "other",
+      "keywords": ["retail", "fmcg", "grocery", "supermarket", "consumer goods", "cosmetics", "garments"],
+      "vendor_patterns": ["dmart", "reliance fresh", "big bazaar", "more supermarket"],
+      "subcategories": [
+        { "id": "grocery", "label": "Grocery", "keywords": ["grocery", "kirana", "provisions"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "grocery" },
+        { "id": "supermarket", "label": "Supermarket", "keywords": ["supermarket", "hypermarket"], "sector": "Retail logistics", "emission_scope": "Scope 3", "carbon_factor": 0.45, "backend_subcategory": "supermarket" },
+        { "id": "wholesale_market", "label": "Wholesale Market", "keywords": ["wholesale", "mandi", "bulk purchase"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.38, "backend_subcategory": "wholesale" },
+        { "id": "consumer_goods", "label": "Consumer Goods", "keywords": ["consumer goods", "fmcg product"], "sector": "Packaging footprint", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "consumer" },
+        { "id": "personal_care", "label": "Personal Care", "keywords": ["shampoo", "soap", "personal care"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.42, "backend_subcategory": "personal_care" },
+        { "id": "household_products", "label": "Household Products", "keywords": ["detergent", "cleaner", "household"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "household" },
+        { "id": "cosmetics", "label": "Cosmetics", "keywords": ["cosmetic", "makeup", "beauty product"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.48, "backend_subcategory": "cosmetics" },
+        { "id": "electronics_retail", "label": "Electronics Retail", "keywords": ["mobile shop", "electronics retail"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "electronics_retail" },
+        { "id": "garments", "label": "Garments", "keywords": ["garment", "clothing", "apparel retail"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "garments" },
+        { "id": "footwear", "label": "Footwear", "keywords": ["shoes", "footwear", "sandal"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "footwear" },
+        { "id": "kitchen_supplies", "label": "Kitchen Supplies", "keywords": ["kitchenware", "utensil", "cookware"], "sector": "Consumer supply chain", "emission_scope": "Scope 3", "carbon_factor": 0.38, "backend_subcategory": "kitchen" }
+      ]
+    },
+    {
+      "id": "construction_infrastructure",
+      "label": "Construction & Infrastructure",
+      "backend_category": "raw_materials",
+      "keywords": ["construction", "civil work", "plumbing", "electrical work", "tiles", "roofing", "contractor"],
+      "vendor_patterns": ["l&t", "shapoorji", "local contractor"],
+      "subcategories": [
+        { "id": "civil_construction", "label": "Civil Construction", "keywords": ["civil work", "construction work", "building work"], "sector": "Construction emissions", "emission_scope": "Scope 3", "carbon_factor": 1.1, "backend_subcategory": "civil" },
+        { "id": "interior_design", "label": "Interior Design", "keywords": ["interior", "modular kitchen", "false ceiling"], "sector": "Construction emissions", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "interior" },
+        { "id": "hardware_materials", "label": "Hardware Materials", "keywords": ["hardware", "nails", "screws", "fittings"], "sector": "Material lifecycle", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "hardware" },
+        { "id": "plumbing", "label": "Plumbing", "keywords": ["plumbing", "pipe", "fitting sanitary"], "sector": "Construction emissions", "emission_scope": "Scope 3", "carbon_factor": 0.6, "backend_subcategory": "plumbing" },
+        { "id": "electrical_work", "label": "Electrical Work", "keywords": ["electrical work", "wiring", "conduit"], "sector": "Construction emissions", "emission_scope": "Scope 3", "carbon_factor": 0.65, "backend_subcategory": "electrical_work" },
+        { "id": "tiles_flooring", "label": "Tiles & Flooring", "keywords": ["tile", "flooring", "marble", "granite"], "sector": "Material lifecycle", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "tiles" },
+        { "id": "paint_chemicals_construction", "label": "Paint & Chemicals", "keywords": ["construction paint", "waterproofing"], "sector": "Construction emissions", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "paint" },
+        { "id": "glass_aluminum", "label": "Glass & Aluminum", "keywords": ["glass", "aluminium section", "aluminum window"], "sector": "Material lifecycle", "emission_scope": "Scope 3", "carbon_factor": 1.4, "backend_subcategory": "glass_aluminum" },
+        { "id": "roofing", "label": "Roofing", "keywords": ["roofing", "sheet roofing", "asbestos sheet"], "sector": "Construction emissions", "emission_scope": "Scope 3", "carbon_factor": 0.55, "backend_subcategory": "roofing" },
+        { "id": "cement_supply", "label": "Cement Supply", "keywords": ["cement bag", "opc supply"], "sector": "Infrastructure carbon intensity", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "cement" },
+        { "id": "steel_structure", "label": "Steel Structure", "keywords": ["steel structure", "structural steel"], "sector": "Infrastructure carbon intensity", "emission_scope": "Scope 3", "carbon_factor": 1.85, "backend_subcategory": "steel" },
+        { "id": "real_estate_maintenance", "label": "Real Estate Maintenance", "keywords": ["building maintenance", "property repair"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "maintenance" }
+      ]
+    },
+    {
+      "id": "agriculture_farming",
+      "label": "Agriculture & Farming",
+      "backend_category": "raw_materials",
+      "keywords": ["agriculture", "farming", "fertilizer", "pesticide", "seeds", "irrigation", "livestock"],
+      "vendor_patterns": ["iffco", "coromandel", "upl limited"],
+      "subcategories": [
+        { "id": "fertilizers", "label": "Fertilizers", "keywords": ["fertilizer", "urea", "dap", "npk"], "sector": "Fertilizer emissions", "emission_scope": "Scope 3", "carbon_factor": 1.5, "backend_subcategory": "fertilizer" },
+        { "id": "pesticides", "label": "Pesticides", "keywords": ["pesticide", "insecticide", "herbicide"], "sector": "Agricultural methane", "emission_scope": "Scope 3", "carbon_factor": 1.2, "backend_subcategory": "pesticide" },
+        { "id": "seeds", "label": "Seeds", "keywords": ["seeds", "seedling", "hybrid seed"], "sector": "Agriculture emissions", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "seeds" },
+        { "id": "irrigation", "label": "Irrigation", "keywords": ["irrigation", "drip irrigation", "pump set"], "sector": "Farm fuel consumption", "emission_scope": "Scope 2", "carbon_factor": 0.6, "backend_subcategory": "irrigation" },
+        { "id": "dairy_farming", "label": "Dairy Farming", "keywords": ["dairy farm", "cattle feed"], "sector": "Agricultural methane", "emission_scope": "Scope 1", "carbon_factor": 1.8, "backend_subcategory": "dairy_farm" },
+        { "id": "poultry_farming", "label": "Poultry Farming", "keywords": ["poultry", "chicken farm", "feed poultry"], "sector": "Agricultural methane", "emission_scope": "Scope 1", "carbon_factor": 1.4, "backend_subcategory": "poultry" },
+        { "id": "farm_equipment", "label": "Farm Equipment", "keywords": ["tractor", "harvester", "farm equipment"], "sector": "Farm fuel consumption", "emission_scope": "Scope 1", "carbon_factor": 1.6, "backend_subcategory": "farm_equipment" },
+        { "id": "livestock", "label": "Livestock", "keywords": ["livestock", "cattle", "goat farming"], "sector": "Agricultural methane", "emission_scope": "Scope 1", "carbon_factor": 2.0, "backend_subcategory": "livestock" },
+        { "id": "organic_farming", "label": "Organic Farming", "keywords": ["organic farming", "bio fertilizer"], "sector": "Agriculture emissions", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "organic_farm" },
+        { "id": "crop_transport", "label": "Crop Transport", "keywords": ["crop transport", "agri logistics"], "sector": "Freight emissions", "emission_scope": "Scope 3", "carbon_factor": 0.8, "backend_subcategory": "crop_transport" },
+        { "id": "agricultural_machinery", "label": "Agricultural Machinery", "keywords": ["thresher", "tiller", "agri machinery"], "sector": "Farm fuel consumption", "emission_scope": "Scope 1", "carbon_factor": 1.3, "backend_subcategory": "agri_machinery" }
+      ]
+    },
+    {
+      "id": "textile_garment",
+      "label": "Textile & Garment Industry",
+      "backend_category": "raw_materials",
+      "keywords": ["textile", "garment", "cotton", "yarn", "fabric", "dyeing", "tailoring"],
+      "vendor_patterns": ["arvind mills", "raymond", "fabindia wholesale"],
+      "subcategories": [
+        { "id": "cotton", "label": "Cotton", "keywords": ["cotton", "cotton bale", "raw cotton"], "sector": "Textile processing", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "cotton" },
+        { "id": "yarn", "label": "Yarn", "keywords": ["yarn", "spinning", "cone yarn"], "sector": "Textile processing", "emission_scope": "Scope 3", "carbon_factor": 0.75, "backend_subcategory": "yarn" },
+        { "id": "fabric_processing", "label": "Fabric Processing", "keywords": ["fabric processing", "weaving", "knitting"], "sector": "Water-intensive production", "emission_scope": "Scope 3", "carbon_factor": 0.85, "backend_subcategory": "fabric" },
+        { "id": "dyeing", "label": "Dyeing", "keywords": ["dyeing", "dye", "bleaching"], "sector": "Water-intensive production", "emission_scope": "Scope 3", "carbon_factor": 1.0, "backend_subcategory": "dyeing" },
+        { "id": "garment_manufacturing", "label": "Garment Manufacturing", "keywords": ["garment factory", "stitching unit"], "sector": "Industrial energy use", "emission_scope": "Scope 3", "carbon_factor": 0.65, "backend_subcategory": "garment_mfg" },
+        { "id": "textile_machinery", "label": "Textile Machinery", "keywords": ["loom", "textile machine"], "sector": "Industrial energy use", "emission_scope": "Scope 3", "carbon_factor": 1.1, "backend_subcategory": "textile_machinery" },
+        { "id": "packaging_materials_textile", "label": "Packaging Materials", "keywords": ["polybag", "garment packaging"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "packaging" },
+        { "id": "textile_chemicals", "label": "Textile Chemicals", "keywords": ["textile chemical", "finishing chemical"], "sector": "Industrial processing", "emission_scope": "Scope 3", "carbon_factor": 1.15, "backend_subcategory": "textile_chemical" },
+        { "id": "fashion_accessories", "label": "Fashion Accessories", "keywords": ["button", "zipper", "accessory fashion"], "sector": "Purchased goods", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "accessories" },
+        { "id": "tailoring_services", "label": "Tailoring Services", "keywords": ["tailoring", "alteration", "boutique stitching"], "sector": "Operational overhead", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "tailoring" }
+      ]
+    },
+    {
+      "id": "energy_industrial_fuel",
+      "label": "Energy & Industrial Fuel",
+      "backend_category": "energy",
+      "keywords": ["coal", "furnace oil", "lpg", "industrial gas", "biomass", "lubricant", "generator fuel"],
+      "vendor_patterns": ["iocl", "bpcl", "hpcl", "indane", "bharat gas"],
+      "subcategories": [
+        { "id": "coal", "label": "Coal", "keywords": ["coal", "steam coal", "industrial coal"], "sector": "Direct fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.42, "backend_subcategory": "coal" },
+        { "id": "furnace_oil", "label": "Furnace Oil", "keywords": ["furnace oil", "fo fuel", "industrial oil"], "sector": "Direct fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.9, "backend_subcategory": "furnace_oil" },
+        { "id": "lpg", "label": "LPG", "keywords": ["lpg", "cylinder gas", "commercial lpg"], "sector": "Direct fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 1.51, "backend_subcategory": "lpg" },
+        { "id": "industrial_gas", "label": "Industrial Gas", "keywords": ["industrial gas", "oxygen industrial", "nitrogen"], "sector": "Industrial energy generation", "emission_scope": "Scope 1", "carbon_factor": 1.2, "backend_subcategory": "industrial_gas" },
+        { "id": "biomass_fuel", "label": "Biomass Fuel", "keywords": ["biomass", "wood pellet", "bagasse"], "sector": "Direct fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 0.4, "backend_subcategory": "biomass" },
+        { "id": "generator_fuel", "label": "Generator Fuel", "keywords": ["generator diesel", "dg fuel"], "sector": "Direct fuel combustion", "emission_scope": "Scope 1", "carbon_factor": 2.68, "backend_subcategory": "diesel" },
+        { "id": "lubricants", "label": "Lubricants", "keywords": ["lubricant", "engine oil", "hydraulic oil"], "sector": "Direct fuel combustion", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "lubricant" },
+        { "id": "transformer_oil", "label": "Transformer Oil", "keywords": ["transformer oil", "insulating oil"], "sector": "Industrial energy generation", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "transformer_oil" },
+        { "id": "battery_systems", "label": "Battery Systems", "keywords": ["industrial battery", "inverter battery"], "sector": "Industrial energy usage", "emission_scope": "Scope 3", "carbon_factor": 0.85, "backend_subcategory": "battery" }
+      ]
+    },
+    {
+      "id": "technology_digital",
+      "label": "Technology & Digital Services",
+      "backend_category": "equipment",
+      "keywords": ["software", "cloud", "saas", "api", "hosting", "cybersecurity", "digital marketing"],
+      "vendor_patterns": ["aws", "microsoft azure", "google cloud", "salesforce", "adobe"],
+      "subcategories": [
+        { "id": "ai_services", "label": "AI Services", "keywords": ["ai service", "machine learning api", "openai"], "sector": "Cloud infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "ai" },
+        { "id": "cloud_hosting", "label": "Cloud Hosting", "keywords": ["cloud hosting", "vps", "dedicated server"], "sector": "Cloud infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "cloud" },
+        { "id": "api_services", "label": "API Services", "keywords": ["api subscription", "api gateway"], "sector": "Digital energy footprint", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "api" },
+        { "id": "saas_platforms", "label": "SaaS Platforms", "keywords": ["saas platform", "subscription software"], "sector": "Cloud infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "saas" },
+        { "id": "data_centers", "label": "Data Centers", "keywords": ["data center", "colocation"], "sector": "Cloud infrastructure", "emission_scope": "Scope 2", "carbon_factor": 0.55, "backend_subcategory": "datacenter" },
+        { "id": "cybersecurity", "label": "Cybersecurity", "keywords": ["cybersecurity", "firewall license", "antivirus enterprise"], "sector": "Digital energy footprint", "emission_scope": "Scope 3", "carbon_factor": 0.22, "backend_subcategory": "security" },
+        { "id": "domain_hosting", "label": "Domain Hosting", "keywords": ["domain", "hosting", "godaddy", "namecheap"], "sector": "Internet infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.18, "backend_subcategory": "domain" },
+        { "id": "digital_marketing", "label": "Digital Marketing", "keywords": ["google ads", "meta ads", "digital marketing"], "sector": "Digital energy footprint", "emission_scope": "Scope 3", "carbon_factor": 0.15, "backend_subcategory": "marketing" },
+        { "id": "internet_infrastructure", "label": "Internet Infrastructure", "keywords": ["cdn", "network infra"], "sector": "Internet infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.28, "backend_subcategory": "infra" },
+        { "id": "software_licensing", "label": "Software Licensing", "keywords": ["software license", "perpetual license"], "sector": "Digital energy footprint", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "license" }
+      ]
+    },
+    {
+      "id": "education_training",
+      "label": "Education & Training",
+      "backend_category": "other",
+      "keywords": ["education", "training", "course", "school fees", "certification", "coaching"],
+      "vendor_patterns": ["coursera", "udemy business", "byju"],
+      "subcategories": [
+        { "id": "school_fees", "label": "School Fees", "keywords": ["school fee", "tuition fee"], "sector": "Educational infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.15, "backend_subcategory": "school" },
+        { "id": "online_courses", "label": "Online Courses", "keywords": ["online course", "e-learning"], "sector": "Digital learning footprint", "emission_scope": "Scope 3", "carbon_factor": 0.1, "backend_subcategory": "online" },
+        { "id": "certification_programs", "label": "Certification Programs", "keywords": ["certification", "iso training"], "sector": "Educational infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.12, "backend_subcategory": "certification" },
+        { "id": "training_workshops", "label": "Training Workshops", "keywords": ["workshop", "corporate training"], "sector": "Educational infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.18, "backend_subcategory": "workshop" },
+        { "id": "books_publications", "label": "Books & Publications", "keywords": ["book", "publication", "journal"], "sector": "Purchased goods", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "books" },
+        { "id": "educational_equipment", "label": "Educational Equipment", "keywords": ["lab equipment education", "smart board"], "sector": "Educational infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "edu_equipment" },
+        { "id": "coaching_services", "label": "Coaching Services", "keywords": ["coaching", "tutor", "competitive exam"], "sector": "Educational infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.14, "backend_subcategory": "coaching" }
+      ]
+    },
+    {
+      "id": "financial_professional",
+      "label": "Financial & Professional Services",
+      "backend_category": "services",
+      "keywords": ["bank charge", "insurance", "audit", "legal", "ca services", "consulting", "tax"],
+      "vendor_patterns": ["hdfc bank", "icici bank", "lic", "bajaj allianz"],
+      "subcategories": [
+        { "id": "banking_charges", "label": "Banking Charges", "keywords": ["bank charge", "neft charge", "account maintenance"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.05, "backend_subcategory": "banking" },
+        { "id": "insurance", "label": "Insurance", "keywords": ["insurance premium", "policy"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.08, "backend_subcategory": "insurance" },
+        { "id": "audit_services", "label": "Audit Services", "keywords": ["audit fee", "statutory audit"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.06, "backend_subcategory": "audit" },
+        { "id": "legal_services", "label": "Legal Services", "keywords": ["legal fee", "advocate", "lawyer"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.06, "backend_subcategory": "legal" },
+        { "id": "ca_services", "label": "CA Services", "keywords": ["chartered accountant", "ca fee", "gst filing ca"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.06, "backend_subcategory": "ca" },
+        { "id": "consulting", "label": "Consulting", "keywords": ["consulting", "advisory", "management consultant"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.07, "backend_subcategory": "consulting" },
+        { "id": "tax_filing", "label": "Tax Filing", "keywords": ["tax filing", "income tax return"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.05, "backend_subcategory": "tax" },
+        { "id": "payroll_processing", "label": "Payroll Processing", "keywords": ["payroll service", "salary processing"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.05, "backend_subcategory": "payroll" },
+        { "id": "licensing_fees", "label": "Licensing Fees", "keywords": ["license fee", "registration fee", "government fee"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.04, "backend_subcategory": "license_fee" }
+      ]
+    },
+    {
+      "id": "waste_management_recycling",
+      "label": "Waste Management & Recycling",
+      "backend_category": "waste_management",
+      "keywords": ["waste", "scrap", "recycling", "e-waste", "hazardous waste", "disposal"],
+      "vendor_patterns": ["kabadiwala", "scrap dealer", "waste management company"],
+      "subcategories": [
+        { "id": "scrap_collection", "label": "Scrap Collection", "keywords": ["scrap", "metal scrap", "scrap sale"], "sector": "Recycling offsets", "emission_scope": "Scope 3", "carbon_factor": -0.2, "backend_subcategory": "scrap" },
+        { "id": "e_waste", "label": "E-Waste", "keywords": ["e-waste", "electronic waste"], "sector": "Waste processing emissions", "emission_scope": "Scope 3", "carbon_factor": 1.5, "backend_subcategory": "e_waste" },
+        { "id": "plastic_recycling", "label": "Plastic Recycling", "keywords": ["plastic recycling", "recycled plastic"], "sector": "Recycling offsets", "emission_scope": "Scope 3", "carbon_factor": -0.15, "backend_subcategory": "plastic_recycle" },
+        { "id": "paper_recycling", "label": "Paper Recycling", "keywords": ["paper recycling", "waste paper"], "sector": "Recycling offsets", "emission_scope": "Scope 3", "carbon_factor": -0.1, "backend_subcategory": "paper_recycle" },
+        { "id": "hazardous_waste", "label": "Hazardous Waste", "keywords": ["hazardous waste", "chemical waste disposal", "hazardous waste handling", "waste disposal expense"], "sector": "Waste processing emissions", "emission_scope": "Scope 3", "carbon_factor": 2.0, "backend_subcategory": "hazardous" },
+        { "id": "waste_disposal", "label": "Waste Disposal", "keywords": ["waste disposal", "landfill", "garbage disposal"], "sector": "Waste processing emissions", "emission_scope": "Scope 3", "carbon_factor": 0.5, "backend_subcategory": "solid" },
+        { "id": "industrial_waste_handling", "label": "Industrial Waste Handling", "keywords": ["industrial waste", "effluent treatment"], "sector": "Waste processing emissions", "emission_scope": "Scope 3", "carbon_factor": 1.2, "backend_subcategory": "industrial_waste" }
+      ]
+    },
+    {
+      "id": "automobile_industry",
+      "label": "Automobile Industry",
+      "backend_category": "transportation",
+      "keywords": ["automobile", "vehicle", "auto parts", "garage", "tyre", "battery auto"],
+      "vendor_patterns": ["maruti service", "tata motors", "mrf", "bosch auto"],
+      "subcategories": [
+        { "id": "vehicle_purchase", "label": "Vehicle Purchase", "keywords": ["vehicle purchase", "car purchase", "bike purchase"], "sector": "Automotive manufacturing", "emission_scope": "Scope 3", "carbon_factor": 2.5, "backend_subcategory": "vehicle_purchase" },
+        { "id": "vehicle_repair", "label": "Vehicle Repair", "keywords": ["vehicle repair", "auto repair"], "sector": "Transport lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.6, "backend_subcategory": "repair" },
+        { "id": "spare_parts_auto", "label": "Spare Parts", "keywords": ["auto spare", "spare parts vehicle"], "sector": "Automotive manufacturing", "emission_scope": "Scope 3", "carbon_factor": 1.1, "backend_subcategory": "spare_parts" },
+        { "id": "lubricants_auto", "label": "Lubricants", "keywords": ["engine oil", "gear oil"], "sector": "Fuel combustion", "emission_scope": "Scope 3", "carbon_factor": 0.9, "backend_subcategory": "lubricant" },
+        { "id": "tires_auto", "label": "Tires", "keywords": ["tyre purchase", "tire"], "sector": "Vehicle lifecycle", "emission_scope": "Scope 3", "carbon_factor": 1.3, "backend_subcategory": "tyres" },
+        { "id": "auto_components", "label": "Auto Components", "keywords": ["auto component", "brake pad", "clutch plate"], "sector": "Automotive manufacturing", "emission_scope": "Scope 3", "carbon_factor": 1.0, "backend_subcategory": "components" },
+        { "id": "ev_components", "label": "EV Components", "keywords": ["ev battery", "ev motor", "electric vehicle part"], "sector": "Automotive manufacturing", "emission_scope": "Scope 3", "carbon_factor": 1.4, "backend_subcategory": "ev_parts" },
+        { "id": "battery_systems_auto", "label": "Battery Systems", "keywords": ["car battery", "inverter battery auto"], "sector": "Automotive manufacturing", "emission_scope": "Scope 3", "carbon_factor": 0.85, "backend_subcategory": "battery" }
+      ]
+    },
+    {
+      "id": "packaging_materials",
+      "label": "Packaging & Materials",
+      "backend_category": "raw_materials",
+      "keywords": ["packaging", "corrugated", "bubble wrap", "carton", "label", "pouch"],
+      "vendor_patterns": ["itc packaging", "parksons packaging"],
+      "subcategories": [
+        { "id": "plastic_packaging", "label": "Plastic Packaging", "keywords": ["plastic pouch", "ldpe bag", "packaging film"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 2.53, "backend_subcategory": "plastic" },
+        { "id": "paper_packaging", "label": "Paper Packaging", "keywords": ["paper bag", "kraft paper"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.93, "backend_subcategory": "paper" },
+        { "id": "corrugated_boxes", "label": "Corrugated Boxes", "keywords": ["corrugated box", "carton box"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.7, "backend_subcategory": "corrugated" },
+        { "id": "bubble_wrap", "label": "Bubble Wrap", "keywords": ["bubble wrap", "air cushion"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 2.0, "backend_subcategory": "bubble_wrap" },
+        { "id": "wooden_crates", "label": "Wooden Crates", "keywords": ["wooden crate", "pallet wood"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "wood" },
+        { "id": "metal_containers", "label": "Metal Containers", "keywords": ["metal drum", "tin container"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 1.5, "backend_subcategory": "metal_container" },
+        { "id": "labels_stickers", "label": "Labels & Stickers", "keywords": ["label", "sticker", "barcode label"], "sector": "Packaging lifecycle emissions", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "labels" }
+      ]
+    },
+    {
+      "id": "telecommunication",
+      "label": "Telecommunication",
+      "backend_category": "telecom",
+      "keywords": ["telecom", "mobile bill", "sim", "data plan", "voip", "network equipment"],
+      "vendor_patterns": ["jio", "airtel", "vi", "bsnl"],
+      "subcategories": [
+        { "id": "sim_services", "label": "SIM Services", "keywords": ["sim card", "new connection"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "sim" },
+        { "id": "mobile_bills", "label": "Mobile Bills", "keywords": ["mobile bill", "postpaid bill"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "mobile" },
+        { "id": "data_services", "label": "Data Services", "keywords": ["data pack", "4g plan", "5g plan"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.28, "backend_subcategory": "data" },
+        { "id": "enterprise_telecom", "label": "Enterprise Telecom", "keywords": ["enterprise telecom", "leased line telecom"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "enterprise_telecom" },
+        { "id": "voip_systems", "label": "VOIP Systems", "keywords": ["voip", "ip pbx"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.22, "backend_subcategory": "voip" },
+        { "id": "network_equipment", "label": "Network Equipment", "keywords": ["router enterprise", "switch network", "tower equipment"], "sector": "Telecom infrastructure energy", "emission_scope": "Scope 3", "carbon_factor": 0.6, "backend_subcategory": "network" }
+      ]
+    },
+    {
+      "id": "real_estate_facility",
+      "label": "Real Estate & Facility Management",
+      "backend_category": "maintenance",
+      "keywords": ["facility management", "building maintenance", "hvac", "elevator", "property lease"],
+      "vendor_patterns": ["cbre", "jll", "sodexo facility"],
+      "subcategories": [
+        { "id": "building_maintenance", "label": "Building Maintenance", "keywords": ["building maintenance", "amc building"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "building" },
+        { "id": "facility_operations", "label": "Facility Operations", "keywords": ["facility operations", "fm services"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.3, "backend_subcategory": "facility" },
+        { "id": "security_systems", "label": "Security Systems", "keywords": ["security system", "access control"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.25, "backend_subcategory": "security" },
+        { "id": "hvac_systems", "label": "HVAC Systems", "keywords": ["hvac maintenance", "ahu", "vrf system"], "sector": "Office electricity", "emission_scope": "Scope 2", "carbon_factor": 0.75, "backend_subcategory": "hvac" },
+        { "id": "elevator_maintenance", "label": "Elevator Maintenance", "keywords": ["elevator amc", "lift maintenance"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "elevator" },
+        { "id": "property_leasing", "label": "Property Leasing", "keywords": ["property lease", "warehouse rent"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.15, "backend_subcategory": "lease" },
+        { "id": "smart_building_systems", "label": "Smart Building Systems", "keywords": ["bms", "smart building", "iot facility"], "sector": "IT infrastructure", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "smart_building" }
+      ]
+    },
+    {
+      "id": "business_services",
+      "label": "Business & Professional Services",
+      "backend_category": "services",
+      "keywords": [
+        "consulting",
+        "consultancy",
+        "professional services",
+        "service charge",
+        "service fee",
+        "design services",
+        "maintenance services",
+        "amc",
+        "plumbing services",
+        "electrical services",
+        "service contract"
+      ],
+      "vendor_patterns": [],
+      "subcategories": [
+        { "id": "consulting_services", "label": "Consulting Services", "keywords": ["consulting", "consultancy", "advisory", "management consultant", "professional services"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.07, "backend_subcategory": "consulting" },
+        { "id": "professional_fees", "label": "Professional Fees", "keywords": ["professional fee", "service fee", "consulting fee", "legal fee", "audit fee", "ca fee", "fee"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.06, "backend_subcategory": "professional_fees" },
+        { "id": "design_services", "label": "Design Services", "keywords": ["design", "graphic design", "interior design", "web design", "ui design"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.08, "backend_subcategory": "design" },
+        { "id": "maintenance_services", "label": "Maintenance Services", "keywords": ["maintenance", "repair", "amc", "plumbing", "electrical services", "service contract", "water tank repair"], "sector": "Facility operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "maintenance" },
+        { "id": "general_services", "label": "General Services", "keywords": ["service", "services", "service charge"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.07, "backend_subcategory": "general" }
+      ]
+    },
+    {
+      "id": "general_msme",
+      "label": "General MSME Operations",
+      "backend_category": "other",
+      "keywords": ["miscellaneous", "general expense", "vendor payment", "consumables", "procurement"],
+      "vendor_patterns": [],
+      "subcategories": [
+        { "id": "miscellaneous_expenses", "label": "Miscellaneous Expenses", "keywords": ["miscellaneous", "misc expense", "sundry"], "sector": "General business operational footprint", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "misc" },
+        { "id": "operational_purchases", "label": "Operational Purchases", "keywords": ["operational purchase", "office purchase"], "sector": "General business operational footprint", "emission_scope": "Scope 3", "carbon_factor": 0.4, "backend_subcategory": "operational" },
+        { "id": "vendor_payments", "label": "Vendor Payments", "keywords": ["vendor payment", "supplier payment"], "sector": "General business operational footprint", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "vendor" },
+        { "id": "business_consumables", "label": "Business Consumables", "keywords": ["consumables", "general supplies"], "sector": "Purchased goods", "emission_scope": "Scope 3", "carbon_factor": 0.38, "backend_subcategory": "consumables" },
+        { "id": "local_procurement", "label": "Local Procurement", "keywords": ["local purchase", "local vendor"], "sector": "General business operational footprint", "emission_scope": "Scope 3", "carbon_factor": 0.35, "backend_subcategory": "local" },
+        { "id": "temporary_services", "label": "Temporary Services", "keywords": ["temp service", "contract labour", "daily wage"], "sector": "Service-based operational emissions", "emission_scope": "Scope 3", "carbon_factor": 0.2, "backend_subcategory": "temp" }
+      ]
+    }
+  ],
+  "legacyCategoryMap": {
+    "shopping": "retail_fmcg",
+    "transportation": "transport_logistics",
+    "transport": "transport_logistics",
+    "utilities": "utilities",
+    "food": "food_hospitality",
+    "industrial": "manufacturing",
+    "construction": "construction_infrastructure",
+    "manufacturing": "manufacturing",
+    "food_processing": "food_hospitality",
+    "agriculture": "agriculture_farming",
+    "retail": "retail_fmcg",
+    "general": "general_msme",
+    "fuel": "energy_industrial_fuel",
+    "electricity": "utilities",
+    "purchase": "manufacturing",
+    "raw_materials": "manufacturing",
+    "energy": "energy_industrial_fuel",
+    "waste_management": "waste_management_recycling",
+    "water": "utilities",
+    "equipment": "office_operations",
+    "maintenance": "real_estate_facility",
+    "services": "business_services",
+    "telecom": "telecommunication",
+    "other": "general_msme"
+  },
+  "mlLabelMap": {
+    "shopping": "retail_fmcg",
+    "transportation": "transport_logistics",
+    "utilities": "utilities",
+    "food": "food_hospitality",
+    "entertainment": "general_msme",
+    "healthcare": "healthcare_medical",
+    "education": "education_training",
+    "services": "business_services",
+    "office": "business_services"
+  },
+  "dataConnectorImportProfiles": {
+    "tally": {
+      "provider": "tally",
+      "productName": "TallyPrime",
+      "formats": ["xml", "xlsx", "csv", "json"],
+      "acceptanceKeywords": [
+        "tallyrequest",
+        "tallymessage",
+        "tallyprime",
+        "voucher type",
+        "voucher number",
+        "party a/c name",
+        "partyledgername",
+        "ledger name",
+        "debit amount",
+        "credit amount",
+        "day book export",
+        "allledgerentries",
+        "envelope",
+        "vouchernumber",
+        "narration"
+      ],
+      "sampleFiles": [
+        "TallyPrime_Realistic_MSME_Export.xml",
+        "TallyPrime_Realistic_MSME_Export.xlsx"
+      ]
+    },
+    "zoho": {
+      "provider": "zoho",
+      "productName": "Zoho Books",
+      "formats": ["csv", "xlsx", "pdf"],
+      "acceptanceKeywords": [
+        "zoho books",
+        "transaction type",
+        "reference no",
+        "contact name",
+        "amount inr",
+        "amount (inr)",
+        "gst %",
+        "gst (%)",
+        "zoho books export",
+        "transaction list",
+        "bank transactions"
+      ],
+      "sampleFiles": [
+        "ZohoBooks_12Month_Realistic_Export.csv"
+      ]
+    },
+    "quickbooks": {
+      "provider": "quickbooks",
+      "productName": "QuickBooks",
+      "formats": ["xlsx", "csv", "pdf"],
+      "acceptanceKeywords": [
+        "quickbooks",
+        "transaction date",
+        "transaction type",
+        "num",
+        "name",
+        "memo",
+        "account",
+        "amount"
+      ],
+      "sampleFiles": []
+    }
+  }
+}

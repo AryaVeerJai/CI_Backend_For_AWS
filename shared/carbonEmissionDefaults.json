@@ -1,0 +1,33 @@
+{
+  "configVersion": "2026-05-13",
+  "reportingLabel": "CO2e_activity_and_spend_proxy",
+  "defaultReportingMode": "compliance",
+  "reportingModes": {
+    "compliance": {
+      "applyCompositeMultipliers": false,
+      "useRegionalGridFactors": true,
+      "excludeSalesRevenue": true
+    }
+  },
+  "methodologyNote": "Grid, fuel, and material factors are indicative CO2e-style proxies aligned with ISO 14064 inventory practice. Prefer metered kWh, liters, and kg when provided on the transaction. CEA regional grid factors and FERA (Scope 3 Cat 3) supplements apply to purchased energy.",
+  "unitPrices": {
+    "water": 0.5
+  },
+  "adjustmentMultiplierClamp": {
+    "min": 0.45,
+    "max": 2.75
+  },
+  "documentPipeline": {
+    "inrPerCo2eIntensityBlock": 1000,
+    "sectorEmissionFactorUnit": "kg_CO2e_per_INR_1000_spend"
+  },
+  "feraModeling": {
+    "enabledInComplianceMode": true,
+    "electricityUpstreamShare": 0.08,
+    "fuelUpstreamShare": 0.18,
+    "renewableElectricityUpstreamShare": 0.02
+  },
+  "gstStripping": {
+    "enabledInComplianceMode": true
+  }
+}
